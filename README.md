@@ -7,7 +7,8 @@
 This repository provides the MATLAB implementation of the **ε-Neighborhood Model (ε-NM)**, a classifier based on the **k-Nearest Neighbor (k-NN) algorithm** and **semantic cell models**.
 
 ### Files Included:
-- **testENM.m**: Implements the **ε-NM** for data classification. This function evaluates the model's performance on a test dataset using the trained model and provided parameters.
+- **trainENM.m**: Trains the **ε-NM** by estimating its parameters from the given training dataset.
+- **testENM.m**: Tests the **ε-NM** by evaluating its classification performance on a test dataset using the trained parameters.
 
 ## Dependencies
 - MATLAB **2013a or later**

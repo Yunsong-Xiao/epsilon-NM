@@ -15,7 +15,7 @@ function accuracy = testENM(trainData, testData, numClasses, sigmaSquared)
 %   accuracy     - The classification accuracy, defined as the proportion of correctly predicted labels in the test dataset.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-   % Extract features and labels
+    % Extract features and labels
     trainFeatures = trainData(:, 1:end-1);  
     testFeatures = testData(:, 1:end-1);    
     numTrainData = size(trainFeatures, 1);  

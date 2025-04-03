@@ -9,5 +9,5 @@ This repository provides the MATLAB implementation of the **ε-Neighborhood Mode
 ### Files Included:
 - **testENM.m**: Tests the **ε-NM** by evaluating its classification performance on a test dataset using the trained parameters.
 
-## Dependencies
-- MATLAB **2013a or later**
+## Dependencies:
+- MATLAB **R2013a or later**

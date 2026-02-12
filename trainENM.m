@@ -1,9 +1,9 @@
 function [sigmaSquared] = trainENM(train_data)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% trainENM - Training process for the ¦Å-Neighborhood Model.
+% trainENM - Training process for the Â¦Ã…-Neighborhood Model.
 %
 % This function applies an iterative algorithm to compute the parameter sigma^2 
-% of the probability density function ¦Ä for a given training dataset. The goal
+% of the probability density function Â¦Ã„ for a given training dataset. The goal
 % is to estimate the model parameters based on the training data.
 %
 % Inputs:
@@ -16,7 +16,7 @@ function [sigmaSquared] = trainENM(train_data)
 % Outputs:
 %   sigmaSquared - The final estimated value of sigma^2 learned through the 
 %                  training process, representing the model's parameter for 
-%                  the probability density function ¦Ä.
+%                  the probability density function Â¦Ã„.
 %
 % Notes:
 %   - The class labels in the dataset must be integers starting from 1 (not 0).
@@ -37,7 +37,7 @@ function [sigmaSquared] = trainENM(train_data)
     % Build Neighbor Labels Matrix
     neighbor_labels_matrix = labels(neighbors_idx);
 
-    % Calculate average distance (d¦Î) between nearest neighbors
+    % Calculate average distance (dÂ¦ÃŽ) between nearest neighbors
     avg_neighbor_distances = (dist_neighbors(:, 1:end-1) + dist_neighbors(:, 2:end)) / 2;  
     avg_neighbor_distances(:, end+1) = dist_neighbors(:, end); 
 

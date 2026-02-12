@@ -1,9 +1,9 @@
 function [sigmaSquared] = trainENM(train_data)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% trainENM - Training process for the ¦Å-Neighborhood Model.
+% trainENM - Training process for the epsilon-Neighborhood Model.
 %
 % This function applies an iterative algorithm to compute the parameter sigma^2 
-% of the probability density function ¦Ä for a given training dataset. The goal
+% of the probability density function delta for a given training dataset. The goal
 % is to estimate the model parameters based on the training data.
 %
 % Inputs:
@@ -16,7 +16,7 @@ function [sigmaSquared] = trainENM(train_data)
 % Outputs:
 %   sigmaSquared - The final estimated value of sigma^2 learned through the 
 %                  training process, representing the model's parameter for 
-%                  the probability density function ¦Ä.
+%                  the probability density function delta.
 %
 % Notes:
 %   - The class labels in the dataset must be integers starting from 1 (not 0).
@@ -147,3 +147,4 @@ function [sigmaSquared] = trainENM(train_data)
     % sigmaSquared = sigma2_values;  % Return all sigma2 values computed
     sigmaSquared = sigma2_values(end,1);
 end
+

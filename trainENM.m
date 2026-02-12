@@ -1,28 +1,24 @@
 function [sigmaSquared] = trainENM(train_data)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % trainENM - Training process for the epsilon-Neighborhood Model.
 %
-% This function applies an iterative algorithm to compute the parameter sigma^2 
-% of the probability density function delta for a given training dataset. The goal
-% is to estimate the model parameters based on the training data.
+% This function applies an iterative algorithm to compute the parameter sigma^2 of the probability density function delta for a given training dataset. 
+% The goal is to estimate the model parameters based on the training data.
 %
 % Inputs:
 %   train_data - Normalized training dataset, where:
 %                * Each row represents a sample (training instance).
-%                * The last column contains labels (target outputs), which are
-%                  consecutive integers starting from 1.
+%                * The last column contains labels (target outputs), which are consecutive integers starting from 1.
 %                * The remaining columns contain feature values for each sample.
 %
 % Outputs:
-%   sigmaSquared - The final estimated value of sigma^2 learned through the 
-%                  training process, representing the model's parameter for 
+%   sigmaSquared - The final estimated value of sigma^2 learned through the training process, representing the model's parameter for 
 %                  the probability density function delta.
 %
 % Notes:
 %   - The class labels in the dataset must be integers starting from 1 (not 0).
 %   - The dataset should be normalized before input.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
     % Data Preprocessing: Extract features and labels from the input data
     normalized_features = train_data(:, 1:end-1); 
@@ -37,7 +33,7 @@ function [sigmaSquared] = trainENM(train_data)
     % Build Neighbor Labels Matrix
     neighbor_labels_matrix = labels(neighbors_idx);
 
-    % Calculate average distance (d¦Î) between nearest neighbors
+    % Calculate average distance (d) between nearest neighbors
     avg_neighbor_distances = (dist_neighbors(:, 1:end-1) + dist_neighbors(:, 2:end)) / 2;  
     avg_neighbor_distances(:, end+1) = dist_neighbors(:, end); 
 
@@ -144,7 +140,10 @@ function [sigmaSquared] = trainENM(train_data)
     end
 
     % Return the final sigma^2 values after training
-    % sigmaSquared = sigma2_values;  % Return all sigma2 values computed
     sigmaSquared = sigma2_values(end,1);
+    % Return all sigma2 values computed
+    % sigmaSquared = sigma2_values;  
+    
 end
+
 
